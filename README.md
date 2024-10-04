@@ -81,43 +81,40 @@ You need to define the structure of the tables and the corresponding API behavio
 ```
 #### Explanation of the JSON Structure:
 
-    Tables: Contains an array of tables that you want to generate.
-        name: The table name (e.g., Registrations).
-        fields: Defines the fields for the table, their types, and validation rules.
-            type: The type of the field (string, date, etc.).
-            required: Boolean indicating whether the field is mandatory.
-            nullable: Indicates whether the field can be null (if omitted, it's assumed false).
-            format: Optional format for fields like email.
-        api: Defines API-related settings.
-            use_middleware: Boolean to indicate whether middleware should be applied.
-            middleware: An array of middleware strings (e.g., auth:sanctum).
-            exclude_methods: API methods (like index, show) that should be excluded from the controller.
-            
+Tables: Contains an array of tables that you want to generate.
+name: The table name (e.g., Registrations).
+fields: Defines the fields for the table, their types, and validation rules.
+    type: The type of the field (string, date, etc.).
+    required: Boolean indicating whether the field is mandatory.
+    nullable: Indicates whether the field can be null (if omitted, it's assumed false).
+    format: Optional format for fields like email.
+api: Defines API-related settings.
+    use_middleware: Boolean to indicate whether middleware should be applied.
+    middleware: An array of middleware strings (e.g., auth:sanctum).
+    exclude_methods: API methods (like index, show) that should be excluded from the controller.
+        
 #### Place the JSON Configuration File in the Project
-
-    Save the above JSON structure into a file called input.json or any other name you prefer, and place it in your Laravel project root directory.
+Save the above JSON structure into a file called input.json or any other name you prefer, and place it in your Laravel project root directory.
 
 #### Run the Generator Script
-
-    Open your terminal and navigate to your Laravel project directory:
-    ```bash 
-      cd /path/to/your/laravel/project
-      /path/to/your/laravel/project php laravel-api-generator.php
-      ```
+Open your terminal and navigate to your Laravel project directory:
+```bash 
+  cd /path/to/your/laravel/project
+  /path/to/your/laravel/project php laravel-api-generator.php
+  ```
 #### Follow the Script Prompts
-
-    The script will parse the api-config.json file and generate:
-        Model for each table.
-        Migration for each table based on the defined fields.
-        Controller with the specified middleware (if use_middleware is true).
-        Request Validation file if validation rules are defined.
-        Exclude Methods: Any methods defined in exclude_methods will be excluded from the controller.
+The script will parse the api-config.json file and generate:
+Model for each table.
+Migration for each table based on the defined fields.
+Controller with the specified middleware (if use_middleware is true).
+Request Validation file if validation rules are defined.
+Exclude Methods: Any methods defined in exclude_methods will be excluded from the controller.
 ## How the Generator Works
 
-    `Model Creation`: The script generates a model based on the table name.
+`Model Creation`: The script generates a model based on the table name.
 
-    `Migration Creation`: A migration file is generated based on the fields and their types. For example, string, date, and other data types are mapped to corresponding Laravel schema types.
+`Migration Creation`: A migration file is generated based on the fields and their types. For example, string, date, and other data types are mapped to corresponding Laravel schema types.
 
-    `Controller Creation`:
-        If `use_middleware` is true, the specified middleware (e.g., auth:sanctum) is added to the controller.
-        If `use_middleware` is false, all the basic CRUD methods (index, show, store, update, and destroy) are added without middleware, and methods are excluded as specified in exclude_methods.
+`Controller Creation`:
+If `use_middleware` is true, the specified middleware (e.g., auth:sanctum) is added to the controller.
+If `use_middleware` is false, all the basic CRUD methods (index, show, store, update, and destroy) are added without middleware, and methods are excluded as specified in exclude_methods.
