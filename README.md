@@ -135,21 +135,21 @@ Open your terminal and navigate to your Laravel project directory:
   - Example:
    ```php
     Route::controller(CourseController::class)->group(function () {
-    Route::post('/sample',  'store');
-    Route::put('/sample/{sample}',  'update');
-    Route::delete('/sample/{sample}',  'destroy');
+      Route::post('/sample',  'store');
+      Route::put('/sample/{sample}',  'update');
+      Route::delete('/sample/{sample}',  'destroy');
     })->middleware('auth:api');
     Route::controller(CourseController::class)->group(function () {
-    Route::get('/sample',  'index');
-    Route::get('/sample/{id}',  'show');
+      Route::get('/sample',  'index');
+      Route::get('/sample/{id}',  'show');
    });
    ```
  without middle ware
  ```php
     Route::controller(CourseController::class)->group(function () {
-    Route::get('/sample',  'index');
-    Route::post('/sample',  'store');
-    Route::get('/sample/{id}',  'show');
-    Route::put('/sample/{sample}',  'update');
-    Route::delete('/sample/{sample}',  'destroy');
+      Route::get('/sample',  'index');
+      Route::post('/sample',  'store');
+      Route::get('/sample/{id}',  'show');
+      Route::put('/sample/{sample}',  'update');
+      Route::delete('/sample/{sample}',  'destroy');
     });```
