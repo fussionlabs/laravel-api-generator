@@ -1,1 +1,1 @@
-# laravel-api-generator
+# Laravel API Generator
