@@ -1,198 +1,6 @@
 {
   "tables": [
-    {
-      "name": "Vendors",
-      "fields": {
-        "name": {
-          "type": "string",
-          "required": true
-        },
-        "slug": {
-          "type": "string",
-          "required": true
-        },
-        "status": {
-          "type": "string",
-          "required": true
-        }
-      },
-      "api": {
-        "use_middleware": true,
-        "middleware": [
-          "auth:sanctum"
-        ],
-        "exclude_methods": [
-          "index",
-          "show"
-        ]
-      }
-    },
-    {
-      "name": "CertificateRequests",
-      "fields": {
-        "fullname": {
-          "type": "string",
-          "required": true
-        },
-        "course_id": {
-          "type": "integer",
-          "required": true
-        },
-        "registration_id": {
-          "type": "integer",
-          "required": true
-        },
-        "start_date": {
-          "type": "date",
-          "required": true
-        },
-        "end_date": {
-          "type": "date",
-          "required": true
-        },
-        "status": {
-          "type": "string",
-          "required": true
-        },
-        "request_date": {
-          "type": "date",
-          "required": true
-        }
-      },
-      "api": {
-        "use_middleware": true,
-        "middleware": [
-          "auth:sanctum"
-        ],
-        "exclude_methods": [
-          "index",
-          "show"
-        ]
-      }
-    },
-    {
-      "name": "Certificates",
-      "fields": {
-        "name": {
-          "type": "string",
-          "required": true
-        },
-        "course_id": {
-          "type": "integer",
-          "required": true
-        },
-        "registration_id": {
-          "type": "integer",
-          "required": true
-        },
-        "sub": {
-          "type": "string",
-          "required": true
-        },
-        "issued_date": {
-          "type": "date",
-          "required": true
-        },
-        "start_date": {
-          "type": "date",
-          "required": true
-        },
-        "end_date": {
-          "type": "date",
-          "required": true
-        },
-        "certificate_number": {
-          "type": "string",
-          "required": true
-        }
-      },
-      "api": {
-        "use_middleware": true,
-        "middleware": [
-          "auth:sanctum"
-        ],
-        "exclude_methods": [
-          "index",
-          "show"
-        ]
-      }
-    },
-    {
-      "name": "Lessons",
-      "fields": {
-        "contentable_type": {
-          "type": "string",
-          "required": true
-        },
-        "contentable_id": {
-          "type": "integer",
-          "required": true
-        },
-        "title": {
-          "type": "string",
-          "required": true
-        },
-        "position": {
-          "type": "integer",
-          "required": true
-        }
-      },
-      "api": {
-        "use_middleware": true,
-        "middleware": [
-          "auth:sanctum"
-        ],
-        "exclude_methods": [
-          "index",
-          "show"
-        ]
-      }
-    },
-    {
-      "name": "Topics",
-      "fields": {
-        "contentable_type": {
-          "type": "string",
-          "required": true
-        },
-        "contentable_id": {
-          "type": "integer",
-          "required": true
-        },
-        "title": {
-          "type": "string",
-          "required": true
-        },
-        "content": {
-          "type": "string",
-          "required": true
-        },
-        "position": {
-          "type": "integer",
-          "required": true
-        }
-      },
-      "api": {
-        "use_middleware": true,
-        "middleware": [
-          "auth:sanctum"
-        ],
-        "exclude_methods": [
-          "index",
-          "show"
-        ]
-      }
-    },
-    {
-      "name": "Modules",
-      "fields": {
-        "title": {
-          "type": "string",
-          "required": true
-        }
-      }
-    },
-    {
+       {
       "name": "Registrations",
       "fields": {
         "name": {
@@ -204,51 +12,35 @@
           "required": true,
           "format": "email"
         },
-        "student_id": {
-          "type": "string",
-          "required": true
-        },
         "phone_number": {
           "type": "string",
-          "required": true
-        },
-        "address": {
-          "type": "string",
-          "nullable": true
-        },
-        "nationality": {
-          "type": "string",
-          "nullable": true
-        },
-        "id_card": {
-          "type": "string",
-          "required": true
-        },
-        "id_card_expiry": {
-          "type": "date",
           "required": true
         },
         "dob": {
           "type": "date",
           "required": true
         },
-        "sex": {
+        "gender": {
           "type": "string",
           "required": true
+        },
+         "address": {
+          "type": "string",
+          "nullable": true
+        },
+         "city": {
+          "type": "string",
+          "nullable": true
+        },
+        "state": {
+          "type": "string",
+          "nullable": true
         },
         "country": {
           "type": "string",
           "required": true
         },
-        "pobox": {
-          "type": "string",
-          "nullable": true
-        },
-        "mobile": {
-          "type": "string",
-          "required": true
-        },
-        "office": {
+        "zip": {
           "type": "string",
           "nullable": true
         }
