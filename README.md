@@ -131,5 +131,20 @@ Open your terminal and navigate to your Laravel project directory:
 
 - **Controller Creation**:
   - If `use_middleware` is set to `true`, the specified middleware (e.g., `auth:sanctum`) is added to the controller.
-  - If `use_middleware` is set to `false`, all the basic CRUD methods (`index`, `show`, `store`, `update`, `destroy`) are included without middleware. However, if methods are listed under `exclude_methods`, they will be excluded from the controller.
-
+  - If `use_middleware` is set to `false`, all the basic CRUD methods (`index`, `show`, `store`, `update`, `destroy`) are included without middleware. However, if methods are listed under `exclude_methods`, they will be seprate block.
+  - Example:
+  - ```php Route::controller(CourseController::class)->group(function () {
+    Route::get('/sample',  'index');
+    Route::post('/sample',  'store');
+    Route::get('/sample/{id}',  'show');
+    Route::put('/sample/{sample}',  'update');
+    Route::delete('/sample/{sample}',  'destroy');
+})->middleware('auth:api');```
+- without middle ware
+- ```php php Route::controller(CourseController::class)->group(function () {
+    Route::get('/sample',  'index');
+    Route::post('/sample',  'store');
+    Route::get('/sample/{id}',  'show');
+    Route::put('/sample/{sample}',  'update');
+    Route::delete('/sample/{sample}',  'destroy');
+});```
