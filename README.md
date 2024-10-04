@@ -97,8 +97,13 @@ You need to define the structure of the tables and the corresponding API behavio
 
 ### 3. Place the JSON Configuration File in the Project
 
-Save the above JSON structure into a file called `api-config.json` (or any other name you prefer) and place it in your Laravel project root directory.
-
+Save the above JSON structure into a file called `input.json` (or any other name you prefer) and place it in your Laravel project root directory.
+- If you change the name of json file, then edit the code in line 50
+```php
+// Load JSON input from file
+$json = file_get_contents('./input.json'); // change the json name as you prefer.
+$input = json_decode($json, true);
+```
 #### Run the Generator Script
 Open your terminal and navigate to your Laravel project directory:
 ```bash 
