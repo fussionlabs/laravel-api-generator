@@ -104,7 +104,7 @@ Save the above JSON structure into a file called `input.json` (or any other name
 $json = file_get_contents('./input.json'); // change the json name as you prefer.
 $input = json_decode($json, true);
 ```
-#### Run the Generator Script
+### 4. Run the Generator Script
 Open your terminal and navigate to your Laravel project directory:
 ```bash 
   cd /path/to/your/laravel/project
